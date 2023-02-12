@@ -6,10 +6,21 @@
         <style>
             body{margin: 0;}
         </style>
+
+        
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+
     </head>
 
     <body>
-        <script src="index.js"></script>
+        <script type="module" src="index.js"></script>
         <canvas id="canvas"></canvas>
     </body>
 </html>

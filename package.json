@@ -4,7 +4,7 @@
   "description": "simple webgame",
   "main": "index.js",
   "scripts": {
-    "test": "geo"
+    "start": "http-server -c-1 -p 8081"
   },
   "repository": {
     "type": "git",
