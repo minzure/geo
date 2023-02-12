@@ -2,6 +2,6 @@
 
 ## simple webgame
 
-<img src="img/screenshot.png">
+<img src="Img/screenshot.png">
 
 ### In Progress
