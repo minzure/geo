@@ -1,24 +1,40 @@
 import * as THREE from 'three';
+//import {} from "three-addons/build"
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
-
-const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-camera.position.set( 0, 0, 100 );
-camera.lookAt( 0, 0, 0 );
 
 const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
 
-const points = [];
-points.push( new THREE.Vector3( - 10, 0, 0 ) );
-points.push( new THREE.Vector3( 0, 10, 0 ) );
-points.push( new THREE.Vector3( 10, 0, 0 ) );
 
-const geometry = new THREE.BufferGeometry().setFromPoints( points );
+document.body.appendChild(renderer.domElement);
 
-const line = new THREE.Line( geometry, material );
-scene.add( line );
-renderer.render( scene, camera );``
+
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial( { color: 0x1D44CC } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+
+camera.position.z = 5;
+
+
+function animate() {
+	requestAnimationFrame( animate );
+	renderer.render( scene, camera );
+}
+animate();
+
+
+var text2 = document.createElement('h1');
+text2.style.position = 'absolute';
+text2.style.width = 100;    
+text2.style.height = 100;
+text2.style.backgroundColor = "white";
+text2.innerHTML = "GEO";
+text2.style.top = window.innerHeight/2 + 'px';
+text2.style.left =  window.innerWidth/2 - 50+ 'px';
+document.body.appendChild(text2);
+
+
