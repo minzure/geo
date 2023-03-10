@@ -24,6 +24,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "http-server": "^14.1.1",
     "load-bmfont": "^1.4.1",
     "lodash": "^4.17.21",
     "three-addons": "^1.2.0"

@@ -13,28 +13,34 @@ document.body.appendChild(renderer.domElement);
 
 
 const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial( { color: 0x1D44CC } );
+const material = new THREE.MeshPhongMaterial( { color: 0x1D44CC } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 camera.position.z = 5;
 
+function render(time){
+	time *= 0.001;
+	cube.rotation.x = time;
+	cube.rotation.y = time/3;
+	renderer.render(scene, camera);
 
-function animate() {
-	requestAnimationFrame( animate );
-	renderer.render( scene, camera );
+	requestAnimationFrame(render)
 }
-animate();
 
 
-var text2 = document.createElement('h1');
-text2.style.position = 'absolute';
-text2.style.width = 100;    
-text2.style.height = 100;
-text2.style.backgroundColor = "white";
-text2.innerHTML = "GEO";
-text2.style.top = window.innerHeight/2 + 'px';
-text2.style.left =  window.innerWidth/2 - 50+ 'px';
-document.body.appendChild(text2);
+const light = new THREE.DirectionalLight(0xFFFFF, 1);
+light.position.set(-1, 2, 4);
+scene.add(light)
+requestAnimationFrame(render);
 
 
+const title = document.createElement('h1');
+title.classList.add("title")
+title.innerHTML = "GEO";
+title.style.top = window.innerHeight/3 + 'px';
+title.style.left =  window.innerWidth/2 - 50+ 'px';
+document.body.appendChild(title);
+
+const text = document.createElement('h2');
+title.classList.add("title");

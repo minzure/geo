@@ -1,8 +1,11 @@
-#info{
-    position: absolute;
-    top : 10px;
-    width: 100%;
-    text-align: center;
-    z-index: 100;
-    display: block;
+.title{
+    position : absolute;    
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 70px;
+
+}
+#document{
+    margin: 0;
 }
